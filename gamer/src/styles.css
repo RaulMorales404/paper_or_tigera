@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial";
+}
+
+.row-header {
+    background-color: #c4c4c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.row-sub-title {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.row-countroll {
+    width: 100%;
+    flex: 8;
+    display: flex;
+}
+.row-countroll {
+    justify-content: space-between;
+    width: 100%;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    width: 30%;
+}
+.counter {
+    font-size: 55px;
+    font-weight: 100;
+}
+.text {
+    font-size: 25px;
+}
+.title-gamer {
+    align-self: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.sub-title-gamer {
+    align-self: center;
+    font-size: 25px;
+    margin-bottom: 85px;
+}
+.space {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    margin: 20px;
+}
+.img-select {
+    width: 130px;
+    height: 130px;
+    align-items: center;
+}
+span.line {
+    background-color: rgb(0, 0, 0);
+    width: 1px;
+    height: 100%;
+}
+.title {
+    font-size: 60px;
+    font-weight: 500;
+}
+.result {
+    font-size: 30px;
+}
