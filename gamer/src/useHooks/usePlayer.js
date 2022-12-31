@@ -32,7 +32,7 @@ export const usePlayer = () => {
       selectedGamer: id,
       selectedPc: select,
     });
-    setMessage("EmPate");
+    setMessage("Empate");
   };
   const validatePlayer = (id, select) => {
     setSatet({
