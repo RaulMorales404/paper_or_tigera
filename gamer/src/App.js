@@ -2,7 +2,7 @@ import "./styles.css";
 import { usePlayer } from "./useHooks/usePlayer";
 
 const App = () => {
-  const { state, img, imageData, winner, showSelect } = usePlayer();
+  const { state, img, imageData,  alertMessage, showSelect, message } = usePlayer();
   return (
     <div className="container">
       <div className="row-header">
@@ -22,9 +22,9 @@ const App = () => {
         </div>
         <div className="space">
           {/* resultado final */}
-          {showSelect && winner && <p className="result">Ganaste</p>}
+          {alertMessage && <p className="result">{message}</p>}
 
-          {showSelect && !winner && (
+          {showSelect && !alertMessage && (
             <div className="container-img">
               <img
                 className="img-select"
@@ -42,8 +42,8 @@ const App = () => {
               </p>
             </div>
           )}
-          {!winner && <span className="line"></span>}
-          {showSelect && !winner && (
+          {!alertMessage && <span className="line"></span>}
+          {showSelect && !alertMessage && (
             <div className="container-img">
               <img
                 className="img-select"
@@ -62,7 +62,6 @@ const App = () => {
             </div>
           )}
         </div>
-
         <div className="col">
           <p className="title-gamer">Computadora</p>
           <p className="sub-title-gamer">La PC selecciona una opción</p>
