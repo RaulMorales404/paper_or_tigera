@@ -18,7 +18,8 @@ const imageData = [
 ];
 export const usePlayer = () => {
   const [showSelect, setShowSelect] = useState(false);
-  const [winner, setWinner] = useState(false);
+  const [alertMessage, setWinner] = useState(false);
+  const [message, setMessage] = useState("hola");
   const [state, setSatet] = useState({
     counterPc: 0,
     counterGamer: 0,
@@ -31,6 +32,7 @@ export const usePlayer = () => {
       selectedGamer: id,
       selectedPc: select,
     });
+    setMessage("EmPate");
   };
   const validatePlayer = (id, select) => {
     setSatet({
@@ -39,6 +41,7 @@ export const usePlayer = () => {
       selectedPc: select,
       counterGamer: state.counterGamer + 1,
     });
+    setMessage("Ganaste");
   };
   const validatePc = (id, select) => {
     setSatet({
@@ -47,6 +50,7 @@ export const usePlayer = () => {
       selectedPc: select,
       counterPc: state.counterPc + 1,
     });
+    setMessage("Perdiste");
   };
 
   const selectOption = (id) => {
@@ -59,7 +63,6 @@ export const usePlayer = () => {
     switch (id) {
       case 1:
         if (selectPcOption === 3) {
-          setWinner(true);
           validatePlayer(id, selectPcOption);
         } else if (selectPcOption === 2) {
           validatePc(id, selectPcOption);
@@ -68,7 +71,6 @@ export const usePlayer = () => {
         break;
       case 2:
         if (selectPcOption === 1) {
-          setWinner(true);
           validatePlayer(id, selectPcOption);
         } else if (selectPcOption === 3) {
           validatePc(id, selectPcOption);
@@ -76,7 +78,6 @@ export const usePlayer = () => {
         break;
       case 3:
         if (selectPcOption === 2) {
-          setWinner(true);
           validatePlayer(id, selectPcOption);
         } else if (selectPcOption === 1) {
           validatePc(id, selectPcOption);
@@ -86,8 +87,12 @@ export const usePlayer = () => {
     }
     setTimeout(() => {
       setShowSelect(false);
+      setWinner(true);
+    }, 1000);
+
+    setTimeout(() => {
       setWinner(false);
-    }, 700);
+    }, 2000);
   };
   const img = imageData.map((item) => (
     <img
@@ -102,7 +107,8 @@ export const usePlayer = () => {
     state,
     img,
     imageData,
-    winner,
+    alertMessage,
     showSelect,
+    message,
   };
 };
